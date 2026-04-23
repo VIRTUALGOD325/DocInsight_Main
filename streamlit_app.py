@@ -12,6 +12,14 @@ import logging
 from pathlib import Path
 import traceback
 from typing import List, Dict
+import nltk
+
+# Download required NLTK data on first run
+for _pkg in ['punkt', 'punkt_tab']:
+    try:
+        nltk.download(_pkg, quiet=True)
+    except Exception:
+        pass
 
 # Local imports
 from enhanced_pipeline import DocumentAnalysisPipeline
